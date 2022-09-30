@@ -22,5 +22,6 @@ import datetime
 if datetime.datetime.now().strftime("%d") == '30': # Cancels out stupid Github idle outs
   with open("IdlerFaker.txt ", "a") as f:
       import datetime
-      d = datetime.datetime.now()
-      f.write(d.strftime("%d"))
+      if datetime.datetime.now().strftime("%Y-%m-%d") not in f:
+        datetime.datetime.now().strftime("%Y-%m-%d")
+        f.write(datetime.datetime.now().strftime("%Y-%m-%d"))
